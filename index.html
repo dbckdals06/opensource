@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="오픈소스 AI 웹사이트 — 프로젝트 소개, 모델/도구 모음, 자료 정리."
+    />
+    <title>오픈소스 AI</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="홈으로">
+          <span class="brand-mark" aria-hidden="true">AI</span>
+          <span class="brand-text">오픈소스 AI</span>
+        </a>
+
+        <nav class="nav" aria-label="주요 메뉴">
+          <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false">
+            <span class="sr-only">메뉴 열기</span>
+            <span aria-hidden="true">☰</span>
+          </button>
+
+          <ul class="nav-list" data-nav-list>
+            <li><a class="nav-link" href="./index.html">홈</a></li>
+            <li><a class="nav-link" href="./pages/about.html">소개</a></li>
+            <li><a class="nav-link" href="#resources">리소스</a></li>
+            <li><a class="nav-link" href="#contact">문의</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-primary" href="./pages/login.html">로그인</a>
+          <a class="btn btn-ghost" href="./pages/signup.html">회원가입</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="badge">오픈소스 · 커뮤니티 · 실전</p>
+            <h1>오픈소스 AI를 쉽게 찾고, 비교하고, 적용하세요.</h1>
+            <p class="lead">
+              모델/툴/데모/가이드를 한 곳에 모아 두는 기본 웹사이트 템플릿입니다.
+              지금은 정적 페이지지만, 필요하면 React/Next.js로 확장하기 쉬운 구조로
+              설계했습니다.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#resources">리소스 보기</a>
+              <a class="btn btn-ghost" href="./pages/about.html">프로젝트 소개</a>
+            </div>
+            <div class="hero-stats" role="list">
+              <div class="stat" role="listitem">
+                <div class="stat-num">10+</div>
+                <div class="stat-label">카테고리</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat-num">50+</div>
+                <div class="stat-label">링크</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat-num">∞</div>
+                <div class="stat-label">확장성</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="예시 카드">
+            <div class="card">
+              <div class="card-top">
+                <div class="pill">추천</div>
+                <div class="pill pill-muted">LLM</div>
+              </div>
+              <h2 class="card-title">모델 비교</h2>
+              <p class="card-desc">
+                라이선스, 성능, 용도, 배포 난이도 기준으로 표준 템플릿을 만들어 비교해보세요.
+              </p>
+              <ul class="checklist">
+                <li>라이선스/상업 사용</li>
+                <li>로컬/클라우드 배포</li>
+                <li>프롬프트/파인튜닝</li>
+              </ul>
+              <a class="card-link" href="#resources">리소스 섹션으로</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="resources">
+        <div class="container">
+          <div class="section-head">
+            <h2>리소스</h2>
+            <p class="muted">자주 쓰는 오픈소스 AI 링크를 카드 형태로 모아두는 영역입니다.</p>
+          </div>
+
+          <div class="grid">
+            <article class="tile">
+              <h3>모델</h3>
+              <p class="muted">LLM / 비전 / 음성 등 모델 목록</p>
+              <a class="tile-link" href="./pages/about.html">구성 방법 보기</a>
+            </article>
+            <article class="tile">
+              <h3>툴</h3>
+              <p class="muted">서빙 / 벡터DB / 에이전트 프레임워크</p>
+              <a class="tile-link" href="./pages/about.html">구성 방법 보기</a>
+            </article>
+            <article class="tile">
+              <h3>데모</h3>
+              <p class="muted">샘플 앱/노트북 링크</p>
+              <a class="tile-link" href="./pages/about.html">구성 방법 보기</a>
+            </article>
+            <article class="tile">
+              <h3>가이드</h3>
+              <p class="muted">설치/배포/보안 체크리스트</p>
+              <a class="tile-link" href="./pages/about.html">구성 방법 보기</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head">
+            <h2>문의</h2>
+            <p class="muted">연락처 폼은 추후 백엔드/폼 서비스로 연결하세요.</p>
+          </div>
+
+          <form class="form" action="#" method="post">
+            <div class="form-row">
+              <label class="label" for="name">이름</label>
+              <input class="input" id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label class="label" for="email">이메일</label>
+              <input
+                class="input"
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <label class="label" for="message">메시지</label>
+              <textarea class="textarea" id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">보내기</button>
+              <p class="muted small">현재는 데모 폼이라 전송되지 않습니다.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="muted small">
+          © <span data-year></span> 오픈소스 AI. All rights reserved.
+        </p>
+        <div class="footer-links">
+          <a class="muted small" href="./pages/about.html">소개</a>
+          <a class="muted small" href="#resources">리소스</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
+
