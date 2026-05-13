@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="오픈소스 AI 웹사이트 — 프로젝트 소개, 모델/도구 모음, 자료 정리."
-    />
+    <meta name="description" content="오늘의 플래너 — 목표 과제와 진행을 한곳에서." />
     <title>오픈소스 AI</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -40,56 +37,11 @@
     </header>
 
     <main id="main">
-      <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <p class="badge">오픈소스 · 커뮤니티 · 실전</p>
-            <h1>오픈소스 AI를 쉽게 찾고, 비교하고, 적용하세요.</h1>
-            <p class="lead">
-              모델/툴/데모/가이드를 한 곳에 모아 두는 기본 웹사이트 템플릿입니다.
-              지금은 정적 페이지지만, 필요하면 React/Next.js로 확장하기 쉬운 구조로
-              설계했습니다.
-            </p>
-            <div class="hero-cta">
-              <div class="hero-planner">
-                <p class="hero-planner-label">오늘의 플래너</p>
-                <a class="btn btn-primary" href="./pages/login.html">시작하기</a>
-              </div>
-              <a class="btn btn-ghost" href="./pages/about.html">프로젝트 소개</a>
-            </div>
-            <div class="hero-stats" role="list">
-              <div class="stat" role="listitem">
-                <div class="stat-num">10+</div>
-                <div class="stat-label">카테고리</div>
-              </div>
-              <div class="stat" role="listitem">
-                <div class="stat-num">50+</div>
-                <div class="stat-label">링크</div>
-              </div>
-              <div class="stat" role="listitem">
-                <div class="stat-num">∞</div>
-                <div class="stat-label">확장성</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-card" aria-label="예시 카드">
-            <div class="card">
-              <div class="card-top">
-                <div class="pill">추천</div>
-                <div class="pill pill-muted">LLM</div>
-              </div>
-              <h2 class="card-title">모델 비교</h2>
-              <p class="card-desc">
-                라이선스, 성능, 용도, 배포 난이도 기준으로 표준 템플릿을 만들어 비교해보세요.
-              </p>
-              <ul class="checklist">
-                <li>라이선스/상업 사용</li>
-                <li>로컬/클라우드 배포</li>
-                <li>프롬프트/파인튜닝</li>
-              </ul>
-              <a class="card-link" href="./pages/about.html">프로젝트 소개 보기</a>
-            </div>
+      <section class="hero hero-home" aria-label="시작">
+        <div class="container hero-home-inner">
+          <div class="hero-planner">
+            <p class="hero-planner-label">오늘의 플래너</p>
+            <a class="btn btn-primary" href="./pages/login.html">시작하기</a>
           </div>
         </div>
       </section>
