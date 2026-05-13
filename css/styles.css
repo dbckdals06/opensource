@@ -28,11 +28,17 @@
 html,body{height:100%}
 body{
   margin:0;
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
   background: var(--bg);
   color:var(--text);
   line-height:1.5;
 }
+
+main{flex:1 0 auto}
 
 a{color:inherit; text-decoration:none}
 a:hover{opacity:.92}
@@ -145,7 +151,27 @@ a:hover{opacity:.92}
 .btn-primary:hover{filter:saturate(1.05) brightness(1.03)}
 .btn-ghost{background:transparent}
 
-.hero{
+.hero-home-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:min(58vh, 520px);
+  padding-block:2.5rem;
+}
+.hero-home .hero-planner{align-items:center; gap:.75rem}
+.hero-home .hero-planner-label{
+  font-size:clamp(1.55rem, 4.2vw, 2.15rem);
+  font-weight:800;
+  margin:0 0 .35rem;
+}
+.hero-home .hero-planner .btn{
+  padding:.95rem 1.65rem;
+  font-size:1.15rem;
+  font-weight:700;
+  border-radius:999px;
+}
   padding: 3.5rem 0 2.5rem;
 }
 .hero-inner{
@@ -175,7 +201,15 @@ h1{
   color:var(--muted);
   font-size:1.05rem;
 }
-.hero-cta{display:flex; gap:.6rem; flex-wrap:wrap}
+.hero-cta{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center}
+.hero-planner{display:flex; flex-direction:column; align-items:flex-start; gap:.45rem}
+.hero-planner-label{
+  margin:0;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--text);
+  letter-spacing:-.02em;
+}
 .hero-stats{
   margin-top:1.6rem;
   display:flex;
@@ -282,7 +316,8 @@ h1{
 }
 
 .site-footer{
-  padding: 2rem 0 2.2rem;
+  margin-top:auto;
+  padding: 2.5rem 0 clamp(2.75rem, 10vh, 5.5rem);
   border-top: 1px solid rgba(255,255,255,.08);
 }
 [data-theme="light"] .site-footer{border-top: 1px solid rgba(0,0,0,.06)}
