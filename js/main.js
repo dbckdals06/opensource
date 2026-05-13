@@ -1,5 +1,44 @@
 (() => {
   const root = document.documentElement;
+  const SESSION_KEY = "opensourcePlannerSession";
+
+  const readSession = () => {
+    try {
+      return localStorage.getItem(SESSION_KEY) === "1";
+    } catch {
+      return false;
+    }
+  };
+
+  const writeSession = () => {
+    try {
+      localStorage.setItem(SESSION_KEY, "1");
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const clearSession = () => {
+    try {
+      localStorage.removeItem(SESSION_KEY);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const normalizePath = (p) => p.replace(/\\/g, "/");
+  const pathname = normalizePath(location.pathname);
+  const currentFile = pathname.split("/").pop() || "index.html";
+
+  if (currentFile === "planner.html" && !readSession()) {
+    location.replace("./login.html");
+    return;
+  }
+
+  if ((currentFile === "login.html" || currentFile === "signup.html") && readSession()) {
+    location.replace("./planner.html");
+    return;
+  }
 
   const storedTheme = localStorage.getItem("theme");
   if (storedTheme === "light" || storedTheme === "dark") {
@@ -35,15 +74,52 @@
     });
   }
 
-  const normalizePath = (p) => p.replace(/\\/g, "/");
-  const pathname = normalizePath(location.pathname);
-  const current = pathname.split("/").pop() || "index.html";
+  const startLink = document.querySelector("[data-start-link]");
+  if (startLink) {
+    const guest = startLink.getAttribute("data-href-guest") || "./pages/login.html";
+    const authed = startLink.getAttribute("data-href-auth") || "./pages/planner.html";
+    startLink.setAttribute("href", readSession() ? authed : guest);
+  }
+
+  const loginForm = document.querySelector('form[data-auth="login"]');
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!loginForm.checkValidity()) {
+        loginForm.reportValidity();
+        return;
+      }
+      writeSession();
+      location.href = "./planner.html";
+    });
+  }
+
+  const signupForm = document.querySelector('form[data-auth="signup"]');
+  if (signupForm) {
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!signupForm.checkValidity()) {
+        signupForm.reportValidity();
+        return;
+      }
+      writeSession();
+      location.href = "./planner.html";
+    });
+  }
+
+  const logoutBtn = document.querySelector("[data-logout]");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      clearSession();
+      location.href = "../index.html";
+    });
+  }
 
   document.querySelectorAll(".nav-link").forEach((link) => {
     const href = link.getAttribute("href") || "";
     const file = normalizePath(href).split("/").pop();
     if (!file) return;
-    if (file === current) link.classList.add("active");
+    if (file === currentFile) link.classList.add("active");
   });
 })();
 

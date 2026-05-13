@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="로그인" />
-    <title>로그인 · 오픈소스 AI</title>
+    <meta name="description" content="오늘 할 일 리스트 만들기" />
+    <title>리스트 만들기 · 오픈소스 AI</title>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
@@ -30,34 +30,16 @@
         </nav>
 
         <div class="header-actions">
-          <a class="btn btn-primary" href="./login.html" aria-current="page">로그인</a>
-          <a class="btn btn-ghost" href="./signup.html">회원가입</a>
+          <button class="btn btn-ghost" type="button" data-logout>로그아웃</button>
         </div>
       </div>
     </header>
 
     <main id="main" class="section">
       <div class="container prose">
-        <h1>로그인</h1>
-        <p class="muted">지금은 데모 화면입니다. 실제 인증 연결이 필요하면 말씀해 주세요.</p>
-
-        <form class="form" action="#" method="post" autocomplete="on" novalidate data-auth="login">
-          <div class="form-row">
-            <label class="label" for="email">이메일</label>
-            <input class="input" id="email" name="email" type="email" inputmode="email" autocomplete="email" required />
-          </div>
-
-          <div class="form-row">
-            <label class="label" for="password">비밀번호</label>
-            <input class="input" id="password" name="password" type="password" autocomplete="current-password" required />
-          </div>
-
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit">로그인</button>
-            <a class="btn btn-ghost" href="./signup.html">회원가입</a>
-            <a class="btn btn-ghost" href="../index.html">취소</a>
-          </div>
-        </form>
+        <h1>리스트 만들기</h1>
+        <p class="muted">오늘의 목표 과제를 적고, 이후 AI 점수·캐릭터 진행 기능을 여기에 붙일 수 있어요.</p>
+        <p class="muted small">지금은 브라우저에만 로그인 상태가 저장됩니다. 실제 계정 연동 시 서버 세션으로 바꿉니다.</p>
       </div>
     </main>
 
@@ -73,4 +55,3 @@
     <script src="../js/main.js" defer></script>
   </body>
 </html>
-
