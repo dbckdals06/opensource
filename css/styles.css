@@ -175,7 +175,15 @@ h1{
   color:var(--muted);
   font-size:1.05rem;
 }
-.hero-cta{display:flex; gap:.6rem; flex-wrap:wrap}
+.hero-cta{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center}
+.hero-planner{display:flex; flex-direction:column; align-items:flex-start; gap:.45rem}
+.hero-planner-label{
+  margin:0;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--text);
+  letter-spacing:-.02em;
+}
 .hero-stats{
   margin-top:1.6rem;
   display:flex;
